@@ -31,3 +31,7 @@ MANIFEST
 
 # Model files
 **/models/**
+
+# Ignore Visual Studio Code settings
+isaac_ros_data_recorder/.vscode/
+.vscode/
