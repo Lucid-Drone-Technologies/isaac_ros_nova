@@ -44,14 +44,14 @@ def generate_launch_description():
         ])
     )
 
-    # sensors_launch = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource([
-    #         isaac_ros_data_recorder_launch_include_dir,
-    #         '/sensors.launch.py'
-    #     ]),
-    #     launch_arguments={
-    #         'target_container': 'data_recorder',
-    #     }.items(),
-    # )
+    sensors_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([
+            isaac_ros_data_recorder_launch_include_dir,
+            '/sensors.launch.py'
+        ]),
+        launch_arguments={
+            'target_container': 'data_recorder',
+        }.items(),
+    )
 
-    return LaunchDescription([container, recorder_launch]) #,sensors_launch])
+    return LaunchDescription([container, recorder_launch ,sensors_launch])

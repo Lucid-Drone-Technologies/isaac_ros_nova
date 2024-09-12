@@ -53,7 +53,7 @@ def generate_launch_description():
                                     LaunchConfiguration('recording_dir'),
                                     "' + '/' + '",
                                     rosbag_name, "'"])
-
+    # record only front stereo camera topics
     rosbag_node = TimerAction(
         actions=[
             ExecuteProcess(
@@ -66,24 +66,18 @@ def generate_launch_description():
                     '/transform',
                     '/robot_description'
                     '/rosout',
-                    '/front_stereo_camera/camera_info',
-                    '/front_stereo_camera/depth',
                     '/front_stereo_camera/left/camera_info',
                     '/front_stereo_camera/left/image_raw_compressed',
                     '/front_stereo_camera/right/camera_info',
                     '/front_stereo_camera/right/image_raw_compressed',
-                    '/left_stereo_camera/camera_info',
-                    '/left_stereo_camera/depth',
-                    '/left_stereo_camera/left/camera_info',
-                    '/left_stereo_camera/left/image_raw_compressed',
-                    '/left_stereo_camera/right/camera_info',
-                    '/left_stereo_camera/right/image_raw_compressed',
-                    '/right_stereo_camera/camera_info',
-                    '/right_stereo_camera/depth',
-                    '/right_stereo_camera/left/camera_info',
-                    '/right_stereo_camera/left/image_raw_compressed',
-                    '/right_stereo_camera/right/camera_info',
-                    '/right_stereo_camera/right/image_raw_compressed',
+                    # '/left_stereo_camera/left/camera_info',
+                    # '/left_stereo_camera/left/image_raw_compressed',
+                    # '/left_stereo_camera/right/camera_info',
+                    # '/left_stereo_camera/right/image_raw_compressed',
+                    # '/right_stereo_camera/left/camera_info',
+                    # '/right_stereo_camera/left/image_raw_compressed',
+                    # '/right_stereo_camera/right/camera_info',
+                    # '/right_stereo_camera/right/image_raw_compressed',
                     ],
                 output='screen',
                 on_exit=Shutdown(),
